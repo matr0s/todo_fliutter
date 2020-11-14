@@ -1,5 +1,10 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+
+import 'package:todoey_fliutter/widgets/task_list.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -18,12 +23,8 @@ class TasksScreen extends StatelessWidget {
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
-          padding: EdgeInsets.only(
-            top: 60.0,
-            left: 30.0,
-            right: 30.0,
-            bottom: 30.0,
-          ),
+          padding:
+              EdgeInsets.only(top: 80.0, left: 30.0, right: 30.0, bottom: 30.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             CircleAvatar(
@@ -56,11 +57,13 @@ class TasksScreen extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20.0),
-                  topLeft: Radius.circular(20.0),
-                )),
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20.0),
+                topLeft: Radius.circular(20.0),
+              ),
+            ),
+            child: TasksList(),
           ),
         ),
       ]),
