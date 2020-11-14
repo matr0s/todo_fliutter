@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 import 'package:todoey_fliutter/widgets/task_list.dart';
+import 'package:todoey_fliutter/widgets/add_task_screen.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -18,7 +19,10 @@ class TasksScreen extends StatelessWidget {
           size: 50.0,
         ),
         onPressed: () {
-          //on press action
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => AddTaskScreen(),
+          );
         },
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
