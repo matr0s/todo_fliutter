@@ -1,7 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AddTaskScreen extends StatelessWidget {
   final Function addNewTaskCallback;
@@ -49,8 +49,11 @@ class AddTaskScreen extends StatelessWidget {
               height: 50.0,
               color: Colors.lightBlueAccent,
               onPressed: () {
-                addNewTaskCallback(newTaskName);
-                //  addNewTaskCallback(newTaskName);
+                // Provider.of<TaskData>(context).tasks.add(
+                //       Task(taskName: newTaskName),
+                //     );
+
+                Navigator.pop(context);
               },
               child: Text(
                 'Add',
@@ -66,10 +69,3 @@ class AddTaskScreen extends StatelessWidget {
     );
   }
 }
-
-// () {
-// //
-// newTask.taskName = taskName;
-// print(newTask);
-// print(newTask.taskName);
-// },
