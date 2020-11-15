@@ -5,4 +5,7 @@ class TaskData extends ChangeNotifier {
   List<Task> tasks = [
     Task(taskName: 'Buy milk'),
   ];
+  int get taskCount {
+    return tasks.length;
+  }
 }
